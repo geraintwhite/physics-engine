@@ -17,8 +17,8 @@ def main():
     with NonBlockingInput() as nbi:
         while True:
 
-            if 0 in ball.edge(screen):
-                v *= -.9
+            if 0 in ball.edge(screen) and v > 0:
+                v *= -.5
             else:
                 v += .1
 
@@ -33,7 +33,7 @@ def main():
                 if not 1 in ball.edge(screen):
                     ball.move(1)
             if ch == ' ':
-                ball.position[1] = 10
+                v -= 2
 
             print(screen)
 
