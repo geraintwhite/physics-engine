@@ -13,8 +13,6 @@ def main():
 
     screen.sprites.append(ball)
 
-    print(screen)
-
     with NonBlockingInput() as nbi:
         while True:
 
@@ -30,7 +28,7 @@ def main():
                 if not 1 in ball.edge(screen):
                     ball.move(1)
             if ch == ' ':
-                ball.position = (14, 10)
+                ball.position[1] = 10
 
             print(screen)
 
