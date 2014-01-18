@@ -13,37 +13,47 @@ def main():
 
     screen.sprites.append(ball)
 
-    r = .7
+    r = 0.7
     yv = 0
+    xv = 0
     with NonBlockingInput() as nbi:
         while True:
 
             edge = ball.edge(screen)
 
             if 2 in edge:
+                xv *= 0.95
                 if yv < 0:
                     yv *= -r
-
             if 0 in edge:
+                xv *= 0.95
                 if yv > 0:
                     yv *= -r
                 elif abs(yv) < r:
                     yv = 0
             else:
                 yv += .1
+            if any(x in edge for x in (1, 3)):
+                if abs(xv) < r:
+                    xv = 0
+                else:
+                    xv *= -r
 
-            ball.position[1] += yv
+            xv *= 0.95
 
             ch = nbi.char()
 
             if ch == '.':
-                if not 3 in ball.edge(screen):
-                    ball.move(3)
+                if not 3 in edge:
+                    xv += 2
             if ch == ',':
-                if not 1 in ball.edge(screen):
-                    ball.move(1)
+                if not 1 in edge:
+                    xv -= 2
             if ch == ' ':
                 yv -= 2
+
+            ball.position[0] += xv
+            ball.position[1] += yv
 
             print(screen)
 
