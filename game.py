@@ -18,6 +18,10 @@ def main():
     with NonBlockingInput() as nbi:
         while True:
 
+            if 2 in ball.edge(screen):
+                if v < 0:
+                    v *= -r
+
             if 0 in ball.edge(screen):
                 if v > 0:
                     v *= -r
