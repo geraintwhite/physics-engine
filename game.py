@@ -34,6 +34,7 @@ def main():
             else:
                 yv += .1
             if any(x in edge for x in (1, 3)):
+                yv *= 0.95
                 if abs(xv) < r:
                     xv = 0
                 else:
