@@ -13,12 +13,16 @@ def main():
 
     screen.sprites.append(ball)
 
+    r = .7
     v = 0
     with NonBlockingInput() as nbi:
         while True:
 
-            if 0 in ball.edge(screen) and v > 0:
-                v *= -.5
+            if 0 in ball.edge(screen):
+                if v > 0:
+                    v *= -r
+                elif abs(v) < r:
+                    v = 0
             else:
                 v += .1
 
