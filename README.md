@@ -1,4 +1,4 @@
-platformer
-==========
+Terminal Physics Engine
+=======================
 
-Platformer game using Olls' graphics engine
+Physics engine using [Olls'](http://github.com/olls) graphics engine.
