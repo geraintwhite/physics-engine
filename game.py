@@ -14,23 +14,25 @@ def main():
     screen.sprites.append(ball)
 
     r = .7
-    v = 0
+    yv = 0
     with NonBlockingInput() as nbi:
         while True:
 
-            if 2 in ball.edge(screen):
-                if v < 0:
-                    v *= -r
+            edge = ball.edge(screen):
 
-            if 0 in ball.edge(screen):
-                if v > 0:
-                    v *= -r
-                elif abs(v) < r:
-                    v = 0
+            if 2 in edge:
+                if yv < 0:
+                    yv *= -r
+
+            if 0 in edge:
+                if yv > 0:
+                    yv *= -r
+                elif abs(yv) < r:
+                    yv = 0
             else:
-                v += .1
+                yv += .1
 
-            ball.position[1] += v
+            ball.position[1] += yv
 
             ch = nbi.char()
 
