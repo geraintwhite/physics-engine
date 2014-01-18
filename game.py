@@ -15,11 +15,16 @@ def main():
 
     print(screen)
 
+    v = 0
     with NonBlockingInput() as nbi:
         while True:
 
-            if not 0 in ball.edge(screen):
-                ball.move(0)
+            if 0 in ball.edge(screen):
+                v *= -.9
+            else:
+                v += .1
+
+            ball.position[1] += v
 
             ch = nbi.char()
 
