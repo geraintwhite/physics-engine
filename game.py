@@ -1,12 +1,12 @@
-from graphics import *
+import graphics as g
 import time
 
 def main():
     FPS = 30
 
-    screen = Canvas(size = (40, 40))
+    screen = g.Canvas(size = (40, 40))
 
-    ball = Sprite(
+    ball = g.Sprite(
         shapes.Circle(5),
         position = (14, 10)
     )
@@ -16,7 +16,7 @@ def main():
     r = 0.7
     yv = 0
     xv = 0
-    with NonBlockingInput() as nbi:
+    with g.NonBlockingInput() as nbi:
         while True:
 
             edge = ball.edge(screen)
