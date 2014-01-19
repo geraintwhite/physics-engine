@@ -7,7 +7,7 @@ def main():
     screen = graphics.Canvas(size = (40, 40))
 
     ball = graphics.Sprite(
-        shapes.Circle(5),
+        graphics.shapes.Circle(5),
         position = (14, 10)
     )
 
