@@ -1,14 +1,16 @@
 import graphics
 import time
 
+
 def main():
+
     FPS = 30
 
-    screen = graphics.Canvas(size = (40, 40))
+    screen = graphics.Canvas(size=(40, 40))
 
     ball = graphics.Sprite(
         graphics.shapes.Circle(5),
-        position = (14, 10)
+        position=(14, 10)
     )
 
     screen.sprites.append(ball)
@@ -58,7 +60,7 @@ def main():
 
             print(screen)
 
-            time.sleep(1/FPS)
+            time.sleep(1 / FPS)
 
 if __name__ == '__main__':
     main()
