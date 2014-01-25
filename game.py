@@ -19,7 +19,7 @@ def main():
     with NonBlockingInput() as nbi:
         while True:
 
-            edge = ball.edge(screen)
+            edge = ball.onEdge(screen)
 
             if 2 in edge:
                 xv *= 0.95
